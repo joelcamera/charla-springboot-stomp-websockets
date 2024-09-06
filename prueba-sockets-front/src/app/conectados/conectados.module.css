@@ -22,3 +22,10 @@
     font-family: monospace;
     margin-bottom: 5px;
 }
+
+.textoUsuarie {
+    font-family: monospace;
+    font-weight: bold;
+    background-color: moccasin;
+    margin-bottom: 5px;
+}

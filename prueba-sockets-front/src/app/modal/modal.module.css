@@ -1,0 +1,23 @@
+.modal {
+    height: 250px;
+    width: 300px;
+    border: 2px solid grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo {
+    font-family: monospace;
+    margin-bottom: 1em;
+}
+
+.input {
+    margin-bottom: 0.7em;
+}
+
+.boton {
+    padding: 1em 0.7em 1em 0.7em;
+    font-family: monospace;
+}

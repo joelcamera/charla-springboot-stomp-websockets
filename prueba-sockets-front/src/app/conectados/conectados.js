@@ -3,7 +3,7 @@
 import { useState } from "react";
 import styles from "./conectados.module.css";
 
-export function Conectados() {
+export function Conectados({nombreUsuarie}) {
   const [conectados, setConectados] = useState([
     "tyurderia",
     "tyurd",
@@ -25,6 +25,7 @@ export function Conectados() {
 
   return (
     <div className={styles.conectados}>
+      <p className={styles.textoUsuarie}>{nombreUsuarie}</p>
       {listaConectados}
     </div>
   );

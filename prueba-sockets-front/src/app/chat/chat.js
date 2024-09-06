@@ -3,12 +3,14 @@ import { Mensajes } from "@/app/mensajes/mensajes";
 import { Conectados } from "@/app/conectados/conectados";
 import { TextoAEnviar } from "@/app/textoAEnviar/textoAEnviar";
 
-export function Chat() {
+export function Chat({encendido, nombre}) {
+  if(!encendido) return null;
+
   return <>
     <div className={styles.container}>
       <div className={styles.mensajesYConectados}>
         <Mensajes/>
-        <Conectados/>
+        <Conectados nombreUsuarie={nombre}/>
       </div>
       <TextoAEnviar/>
     </div>
