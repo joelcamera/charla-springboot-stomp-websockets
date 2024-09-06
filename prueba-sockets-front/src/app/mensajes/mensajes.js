@@ -9,29 +9,7 @@ const tipoMensajes = {
   PRIVADO: "PRIVADO",
 }
 
-const MensajeComun = ({ mensaje }) => {
-  return (
-    <p className={styles.mensajeComun}>
-      {mensaje}
-    </p>
-  );
-};
-
-const MensajeBroadcast = ({ mensaje }) => {
-  return (
-    <p className={styles.mensajeBroadcast}>
-      {mensaje}
-    </p>
-  );
-};
-
-const MensajePrivado = ({ mensaje }) => {
-  return (
-    <p className={styles.mensajePrivado}>
-      {mensaje}
-    </p>
-  );
-};
+const Texto = ({ texto, className }) => <p className={className}>{texto}</p>;
 
 export function Mensajes() {
   const [mensajes, setMensajes] = useState([
@@ -54,13 +32,16 @@ export function Mensajes() {
   ])
 
   const listaMensajes = mensajes.map((mensaje, idx) => {
+    let className;
     if(mensaje.tipo === tipoMensajes.COMUN) {
-      return <MensajeComun mensaje={mensaje.texto} key={idx}/>;
+      className = styles.mensajeComun;
     } else if(mensaje.tipo === tipoMensajes.BROADCAST) {
-      return <MensajeBroadcast mensaje={mensaje.texto} key={idx}/>;
+      className = styles.mensajeBroadcast;
     } else if(mensaje.tipo === tipoMensajes.PRIVADO) {
-      return <MensajePrivado mensaje={mensaje.texto} key={idx}/>;
+      className = styles.mensajePrivado;
     }
+
+    return <Texto texto={mensaje.texto} key={idx} className={className}/>;
   });
 
   return (
