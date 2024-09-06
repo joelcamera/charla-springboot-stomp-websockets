@@ -1,3 +1,5 @@
+# Charla Websockets con SpringBoot usando STOMP!
+
 ### Cosas para hablar de back
 - que es stomp?
 - diferencia entre stomp y websockets
@@ -8,7 +10,6 @@
 - testing
 - logs (queres tener info)
 - seguridad? (rechazar conexiones por ejemplo...)
-
 
 
 ### Cosas para hacer de front
