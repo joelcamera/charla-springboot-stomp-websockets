@@ -12,3 +12,16 @@
     font-family: monospace;
     margin-bottom: 5px;
 }
+
+.mensajeBroadcast {
+    font-family: monospace;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: grey;
+}
+
+.mensajePrivado {
+    font-family: monospace;
+    margin-bottom: 5px;
+    color: darkred;
+}
