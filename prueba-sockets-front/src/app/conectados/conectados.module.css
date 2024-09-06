@@ -1,0 +1,24 @@
+.conectados {
+    height: 500px;
+    width: 200px;
+    overflow-y: scroll;
+    padding: 0.5em;
+    border: 2px solid #ffe6ae;
+}
+
+.seleccionado {
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+}
+
+.noSeleccionado {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.texto {
+    font-family: monospace;
+    margin-bottom: 5px;
+}

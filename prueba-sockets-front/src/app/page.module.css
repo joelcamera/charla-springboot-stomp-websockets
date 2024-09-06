@@ -1,0 +1,16 @@
+.titulo {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mensajesYConectados {
+  display: flex;
+  justify-content: center;
+}
+
