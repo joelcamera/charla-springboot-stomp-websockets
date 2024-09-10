@@ -29,4 +29,8 @@ public class SessionManagement {
     public List<String> nombresConectades() {
         return this.sessions.values().stream().map(UsuarieConectado::nombre).toList();
     }
+
+    public String obtenerNombreDeUsuarie(String sessionId) {
+        return this.sessions.getOrDefault(sessionId, new UsuarieConectado(NOMBRE_DEFAULT)).nombre();
+    }
 }

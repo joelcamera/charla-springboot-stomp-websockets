@@ -19,7 +19,7 @@ export default function Home() {
     <div className={styles.container}>
       <div>
         <h1 className={styles.titulo}>mIRCo</h1>
-        <Chat encendido={!mostrarCardIngreso} nombre={nombre} />
+        {!mostrarCardIngreso && <Chat nombre={nombre}/>}
       </div>
       <CardIngreso mostrar={mostrarCardIngreso} onClickAgregarNombre={onClickAgregarNombre}/>
     </div>

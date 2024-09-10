@@ -10,7 +10,7 @@ export function Mensajes({mensajes}) {
     let className;
     if(mensaje.tipo === tipoMensajes.COMUN) {
       className = styles.mensajeComun;
-    } else if(mensaje.tipo === tipoMensajes.BROADCAST || mensaje.tipo === tipoMensajes.JOIN) {
+    } else if(mensaje.tipo === tipoMensajes.BROADCAST || mensaje.tipo === tipoMensajes.JOIN || mensaje.tipo === tipoMensajes.LEAVE) {
       className = styles.mensajeBroadcast;
     } else if(mensaje.tipo === tipoMensajes.PRIVADO) {
       className = styles.mensajePrivado;
