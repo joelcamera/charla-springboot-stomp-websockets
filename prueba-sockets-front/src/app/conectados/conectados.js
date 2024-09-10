@@ -3,21 +3,19 @@
 import { useState } from "react";
 import styles from "./conectados.module.css";
 
-export function Conectados({nombreUsuarie}) {
-  const [conectados, setConectados] = useState([
-    "tyurderia",
-    "tyurd",
-  ]);
-  const [seleccionado, setSeleccionado] = useState("empty");
-
-  const seleccionarConectado = (conectado) => {
-    setSeleccionado(prevState => prevState === conectado ? "empty" : conectado);
+export function Conectados({nombreUsuarie, conectados, seleccionarContacto, contactoSeleccionado}) {
+  const onClickSeleccionar = (contacto) => {
+    if(contactoSeleccionado === contacto) {
+      seleccionarContacto("");
+    } else {
+      seleccionarContacto(contacto);
+    }
   }
 
-  const listaConectados = conectados.map((conectado, idx) => {
-    const className = seleccionado === conectado ? styles.seleccionado : styles.noSeleccionado;
+  const listaConectados = conectados.filter(conectado => conectado !== nombreUsuarie).map((conectado, idx) => {
+    const className = contactoSeleccionado === conectado ? styles.seleccionado : styles.noSeleccionado;
     return (
-      <div key={idx} onClick={() => seleccionarConectado(conectado)} className={className}>
+      <div key={idx} onClick={() => onClickSeleccionar(conectado)} className={className}>
         <p className={styles.texto}>{conectado}</p>
       </div>
     );

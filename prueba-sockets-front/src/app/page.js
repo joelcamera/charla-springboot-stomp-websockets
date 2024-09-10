@@ -2,26 +2,26 @@
 
 import styles from "./page.module.css";
 import { useState } from "react";
-import { Modal } from "@/app/modal/modal";
+import { CardIngreso } from "@/app/cardIngreso/cardIngreso";
 import { Chat } from "@/app/chat/chat";
 
 
 export default function Home() {
   const [nombre, setNombre] = useState("");
-  const [mostrarModal, setMostrarModal] = useState(true);
+  const [mostrarCardIngreso, setMostrarCardIngreso] = useState(true);
 
   const onClickAgregarNombre = (nombre) => {
     setNombre(nombre);
-    setMostrarModal(false);
+    setMostrarCardIngreso(false);
   }
 
   return (
     <div className={styles.container}>
       <div>
         <h1 className={styles.titulo}>mIRCo</h1>
-        <Chat encendido={!mostrarModal} nombre={nombre} />
+        <Chat encendido={!mostrarCardIngreso} nombre={nombre} />
       </div>
-      <Modal mostrarModal={mostrarModal} onClickAgregarNombre={onClickAgregarNombre}/>
+      <CardIngreso mostrar={mostrarCardIngreso} onClickAgregarNombre={onClickAgregarNombre}/>
     </div>
   );
 }

@@ -1,41 +1,16 @@
 "use client";
 
 import styles from "./mensajes.module.css";
-import { useState } from "react";
-
-const tipoMensajes = {
-  COMUN: "COMUN",
-  BROADCAST: "BROADCAST",
-  PRIVADO: "PRIVADO",
-}
+import { tipoMensajes } from "@/app/mensajes/tipoMensajes";
 
 const Texto = ({ texto, className }) => <p className={className}>{texto}</p>;
 
-export function Mensajes() {
-  const [mensajes, setMensajes] = useState([
-    {
-      tipo: tipoMensajes.COMUN,
-      texto: "[19.07.2016 08:42:28] <tyurderia> b a b a b ab ab ab ab ab ab ab ab ab ab ab ab ab ab ab ab ab ab ab ab ab ab ab ab ab  ab ab ab",
-    },
-    {
-      tipo: tipoMensajes.PRIVADO,
-      texto: "[19.07.2016 08:42:38] [Private] <tyurd> lellel",
-    },
-    {
-      tipo: tipoMensajes.COMUN,
-      texto: "[19.07.2016 08:42:38] <tyurd> wazzup",
-    },
-    {
-      tipo: tipoMensajes.BROADCAST,
-      texto: "[19.07.2016 08:42:38] <Server> Saludos de su servidor amigue!",
-    },
-  ])
-
+export function Mensajes({mensajes}) {
   const listaMensajes = mensajes.map((mensaje, idx) => {
     let className;
     if(mensaje.tipo === tipoMensajes.COMUN) {
       className = styles.mensajeComun;
-    } else if(mensaje.tipo === tipoMensajes.BROADCAST) {
+    } else if(mensaje.tipo === tipoMensajes.BROADCAST || mensaje.tipo === tipoMensajes.JOIN) {
       className = styles.mensajeBroadcast;
     } else if(mensaje.tipo === tipoMensajes.PRIVADO) {
       className = styles.mensajePrivado;

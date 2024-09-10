@@ -3,7 +3,7 @@
 import styles from "./textoAEnviar.module.css"
 import { useState } from "react";
 
-export function TextoAEnviar() {
+export function TextoAEnviar({enviar}) {
   const [texto, setTexto] = useState("");
 
   const cambiarTexto = (event) => {
@@ -12,7 +12,7 @@ export function TextoAEnviar() {
 
   const teclaPresionada = (event) => {
     if (event.key === "Enter") {
-      console.log("Se presionó Enter!");
+      enviar(texto);
       setTexto("");
     }
   }
