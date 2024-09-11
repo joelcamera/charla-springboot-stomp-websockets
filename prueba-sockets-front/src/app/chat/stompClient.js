@@ -19,7 +19,7 @@ export class StompClient {
         this._nuevoMensajeRecibido(JSON.parse(mensajeDelBack.body));
       });
 
-      this._stompClient.subscribe(`/topic/private/${this._nombre}`, (mensajeDelBack) => {
+      this._stompClient.subscribe(`/queue/private/${this._nombre}`, (mensajeDelBack) => {
         this._nuevoMensajeRecibido(JSON.parse(mensajeDelBack.body));
       });
 

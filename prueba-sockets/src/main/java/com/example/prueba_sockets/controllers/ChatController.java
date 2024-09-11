@@ -54,8 +54,8 @@ public class ChatController {
         logger.info("sender: " + chatMessage.sender() + "; receiver: " + chatMessage.receiver() + "; texto: " + chatMessage.texto() + "; tipo: " + chatMessage.tipo());
         var texto = String.format("[%s] <%s to %s> %s", strNow(), chatMessage.sender(), chatMessage.receiver(), chatMessage.texto());
         var chatMessageAEnviar = new ChatMessage(texto, chatMessage.sender(), chatMessage.tipo(), chatMessage.receiver());
-        simpMessagingTemplate.convertAndSend("/topic/private/" + chatMessageAEnviar.receiver(), chatMessageAEnviar);
-        simpMessagingTemplate.convertAndSend("/topic/private/" + chatMessageAEnviar.sender(), chatMessageAEnviar);
+        simpMessagingTemplate.convertAndSend("/queue/private/" + chatMessageAEnviar.receiver(), chatMessageAEnviar);
+        simpMessagingTemplate.convertAndSend("/queue/private/" + chatMessageAEnviar.sender(), chatMessageAEnviar);
     }
 
     private static String strNow() {
