@@ -1,6 +1,6 @@
 .chat {
-    height: 500px;
-    width: 800px;
+    height: 300px;
+    width: 600px;
     overflow-y: scroll;
     padding: 0.5em;
     border-top: 2px solid #ffe6ae;

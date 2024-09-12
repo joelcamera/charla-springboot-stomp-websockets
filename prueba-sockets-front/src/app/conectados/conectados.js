@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import styles from "./conectados.module.css";
 
 export function Conectados({nombreUsuarie, conectados, seleccionarContacto, contactoSeleccionado}) {
