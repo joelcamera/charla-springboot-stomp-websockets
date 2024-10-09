@@ -7,7 +7,7 @@ export class StompClient {
   _stompClient;
 
   constructor({ nombre, nuevoMensajeRecibido, setearUsuariosConectados }) {
-    this._stompClient = Stomp.over(() => new SocksJS("http://localhost:8080/websocket"));
+    this._stompClient = Stomp.over(() => new SocksJS("http://localhost:8080/websocket", {}, {}));
     this._nombre = nombre;
     this._nuevoMensajeRecibido = nuevoMensajeRecibido;
     this._setearUsuariosConectados = setearUsuariosConectados;
